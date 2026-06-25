@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>學生座位表</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">老師課堂工具</p>
+        <h1>學生座位表</h1>
+      </div>
+      <div class="actions">
+        <button id="arrangeBtn" type="button">依名單排座</button>
+        <button id="shuffleBtn" type="button">隨機洗座</button>
+        <button id="printBtn" type="button">列印</button>
+        <button id="clearBtn" type="button" class="danger">清空</button>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <aside class="settings">
+        <label>
+          班級名稱
+          <input id="className" type="text" placeholder="例如：七年一班">
+        </label>
+
+        <div class="number-grid">
+          <label>
+            每排幾人
+            <input id="seatsPerRow" type="number" min="1" max="12" value="6">
+          </label>
+          <label>
+            共幾排
+            <input id="rowCount" type="number" min="1" max="12" value="5">
+          </label>
+        </div>
+
+        <label>
+          學生名單
+          <textarea id="studentNames" placeholder="一行一個名字
+王小明
+李小華
+陳小美"></textarea>
+        </label>
+
+        <p id="saveStatus" class="save-status" aria-live="polite">資料會自動保存。</p>
+      </aside>
+
+      <section class="chart-area">
+        <div class="print-heading">
+          <h2 id="classTitle">未命名班級</h2>
+          <p id="chartInfo">請設定座位後開始排座。</p>
+        </div>
+
+        <div class="stage">講台</div>
+        <div id="seatGrid" class="seat-grid" aria-label="學生座位表"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
